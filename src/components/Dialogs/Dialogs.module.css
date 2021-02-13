@@ -1,0 +1,38 @@
+
+.content {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    /* border-bottom: 1px solid rgb(171, 119, 240);
+    border-top: 1px solid rgb(171, 119, 240);
+    border-left: 1px solid rgb(171, 119, 240); */
+    box-shadow: 0px 0px 2px #a1a1a1;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.content .column_names {
+    background-color: rgb(122, 122, 122);
+}
+
+.content .section {
+    text-align: center;
+}
+
+.content .column_names .section {
+    color: cyan;
+}
+
+.content .column_messages .section {
+    color: black;
+}
+
+.content .column_messages {
+    background-color: gold;
+}
+
+.content .column_messages .message {
+    padding-left: 25px;
+    padding-top: 25px;
+    color: black;
+}
+

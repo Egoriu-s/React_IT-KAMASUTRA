@@ -1,0 +1,18 @@
+.content {
+    font-family: fantasy;
+    font-size: 15px;
+}
+
+.createPost{
+    padding-left: 25px;
+}
+
+.createPost p{
+    font-size: 25px;
+    color: black;
+}
+
+.allPosts {
+    background-color: wheat;
+    padding-bottom: 25px;
+}

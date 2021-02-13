@@ -1,0 +1,10 @@
+.name{
+    padding-left: 25px;
+    padding-top: 25px;
+    text-decoration: none;
+}
+
+.name a{
+    text-decoration: none;
+    color:cyan;
+}

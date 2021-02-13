@@ -1,0 +1,8 @@
+.content {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    /* border-bottom: 1px solid rgb(171, 119, 240);
+    border-top: 1px solid rgb(171, 119, 240);
+    border-left: 1px solid rgb(171, 119, 240); */
+    box-shadow: 0px 0px 2px #a1a1a1;
+}
