@@ -1,0 +1,13 @@
+.name {
+  display: grid;
+    grid-template-columns: 1fr 11fr;
+    margin: 25px;
+    border-bottom: 1px solid antiquewhite;
+    padding-bottom: 10px;
+}
+
+.name img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}

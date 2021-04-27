@@ -1,10 +1,21 @@
 .item {
    margin-left: 25px;
-   margin-top: 25px;
-   padding-top: 10px;
+   margin-top: 50px;
 }
+
+.item2 {
+   display: grid;
+   grid-template-columns: 1fr 1fr 10fr;
+}
+
 .item img {
    width: 75px;
    height: 75px;
    border-radius: 50%;
+}
+
+.item div span {
+   font-family: "Segoe UI";
+   font-size: 13px;
+   color: black;
 }

@@ -36,3 +36,12 @@
     color: black;
 }
 
+.addMessage {
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.addMessage button {
+    margin-top: 10px;
+    margin-left: 90px;
+}

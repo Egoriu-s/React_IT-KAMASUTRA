@@ -1,9 +1,25 @@
-.img_background {
-    width:100%;
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
 }
-.img_AVATAR {
+
+.ImageAvatarka {
+
+    border: 1px solid black;
+}
+
+.ImageAvatarka img {
     width: 200px;
-    border:1px solid;
-    margin-left: 25px;
-    margin-top: 25px;
+    border-radius: 50%;
+
 }
+
+.aboutMe {
+    border: 1px solid black;
+}
+
+.contacts {
+    border: 1px solid black;
+}
+
