@@ -1,9 +1,7 @@
 import React from 'react';
-import axios from "axios";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
-import {setIsFetching, setUserData} from "../../redux/auth_reduser";
 import Header from "./Header";
+import {authlogout} from "../../redux/auth_reduser";
 
 
 class HeaderClassContainer extends React.Component {
@@ -14,15 +12,11 @@ class HeaderClassContainer extends React.Component {
     }
 
     componentDidMount() {
-
-        axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`).then(response => {
-            debugger
-            this.props.setUserData(response.data.id, response.data.email, response.data.login);
-        });
+        //this.props.authMe();
     }
 
     render() {
-        return <Header {...this.props} auth={this.props.auth}/>
+        return <Header {...this.props}/>
     }
 
 }
@@ -34,14 +28,10 @@ let mapStateToProps = (state) => {
 };
 
 let obj_ActionCreator_ToDispatch = {
-    setUserData: setUserData,
-    setIsFetching: setIsFetching
+    authlogout: authlogout
 };
 
-
-const HeaderUrlDataContainer = withRouter(HeaderClassContainer);
-
-const HeaderContainer = connect(mapStateToProps, obj_ActionCreator_ToDispatch)(HeaderUrlDataContainer);
+const HeaderContainer = connect(mapStateToProps, obj_ActionCreator_ToDispatch)(HeaderClassContainer);
 
 export default HeaderContainer;
 

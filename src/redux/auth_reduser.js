@@ -1,12 +1,13 @@
-const SET_USER_DATA = 'SET-USER-DATA';
-const NO_SET_USER_DATA = 'NO-SET-USER-DATA';
-const LOADING_AJAX_isFeTCHING = 'LOADING-AJAX-isFeTCHING';
+import {authAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
+
+const SET_USER_DATA = 'auth_reducer/SET-USER-DATA';
 
 let firstInitialState = {
     id: null,
     email: null,
     login: null,
-    isFetching: false
+    isAuth: false
 };
 
 const authReduser = (state = firstInitialState, action) => {
@@ -19,32 +20,64 @@ const authReduser = (state = firstInitialState, action) => {
                 ...action.data
             };
 
-        case LOADING_AJAX_isFeTCHING: {
-            return {
-                ...state,
-                isFetching: action.isFetching
-            }
-        }
-
         default:
             return state;
     }
 };
 
+
 // Action Creator-ы
 
-export const setUserData = (id, email, login) => ({type: SET_USER_DATA, data: {id: id, email: email, login: login}});
+export const setUserData = (id, email, login, isAuth) => ({
+        type: SET_USER_DATA, data: {
+            id: id,
+            email: email,
+            login: login,
+            isAuth: isAuth
+        }
+    }
+);
 
-export const setIsFetching = (isFetching23) => ({type: LOADING_AJAX_isFeTCHING, isFetching: isFetching23});
+
+// Thunk Creator-ы
+
+// export const authMe = () => {
+//     return (dispacth) => {
+//         authAPI.setAuthMe().then(data => {
+//             if (data.resultCode === 0) {
+//                 let {id, email, login} = data.data;
+//                 dispacth(setUserData(id, email, login, true));
+//             }
+//         });
+//     };
+// }
+
+export const authMe = () => async (dispacth) => {
+    let response1 = await authAPI.setAuthMe();
+    if (response1.data.resultCode === 0) {
+        let {id, email, login} = response1.data.data;
+        dispacth(setUserData(id, email, login, true));
+    }
+};
+
+
+export const authlogin = (email, password, rememberMe) => async (dispacth) => {
+    let response2 = await authAPI.authLogin(email, password, rememberMe);
+    if (response2.data.resultCode === 0) {
+        dispacth(authMe());
+    } else {
+        let errorLoginMessage = response2.data.messages.length > 0
+            ? response2.data.messages[0]
+            : 'Some error';
+        dispacth(stopSubmit('login', {_error: errorLoginMessage}));
+    }
+};
+
+export const authlogout = () => async (dispacth) => {
+    let response3 = await authAPI.authLogout();
+    if (response3.data.resultCode === 0) {
+        dispacth(setUserData(null, null, null, false))
+    }
+};
 
 export default authReduser;
-
-
-// if (action.type === ADD_POST_STATE) {
-//     let newPost2 = state.newPostText;
-//     state.postsArray.push({id: 4, message: newPost2, like: 0});
-//     state.newPostText = ''; // очистка поля textarea после нажатия и добавления поста
-// } else if (action.type === NEW_POST_STATE) {
-//     state.newPostText = action.newText;
-// }
-// return state;

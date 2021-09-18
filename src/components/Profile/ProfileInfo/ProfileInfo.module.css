@@ -1,25 +1,67 @@
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 10px;
+    grid-template-columns: 1fr 2fr;
 }
 
 .ImageAvatarka {
-
+    display: grid;
+    grid-template-rows: 2fr 1fr;
     border: 1px solid black;
+    text-align: center;
+    font-family: "SW Crawl Title";
+    color: goldenrod;
+    font-size: 40px;
+
 }
 
 .ImageAvatarka img {
+    margin-top: 50px;
     width: 200px;
     border-radius: 50%;
+    /*border: 1px solid black;*/
 
+}
+
+.Right {
+    border: 1px solid black;
 }
 
 .aboutMe {
-    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: black;
+    font-size: 16px;
 }
 
+.aboutMe .aboutMe_Me {
+    font-size: 22px;
+    color: rgb(171, 119, 240);
+}
+
+
 .contacts {
-    border: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.contacts p {
+    color: rgb(171, 119, 240);
+    font-size: 16px;
+}
+
+.status {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.status span span {
+    font-family: "Monotype Corsiva";
+    font-size: 28px;
+    color: goldenrod;
 }
 

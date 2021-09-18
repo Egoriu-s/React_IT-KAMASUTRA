@@ -8,7 +8,7 @@ const FriendName = (props) => {
 
     return (
         <div className={style_friendName.name}>
-            <div><img src='https://pbs.twimg.com/media/EAtppBxU0AACj87.jpg' alt='' /></div>
+            <div><img src='https://pbs.twimg.com/media/EGBq7cmXUAEO920.jpg' alt='' /></div>
             <div>Алоха, {props.name}</div>
         </div>
     );

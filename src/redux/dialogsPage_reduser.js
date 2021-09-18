@@ -1,5 +1,4 @@
 const SEND_MESSAGE_STATE = 'SEND-MESSAGE-STATE';
-const NEW_MESSAGE_STATE = 'NEW-MESSAGE-STATE';
 
 let firstInitialState = {
     dialogsArray: [
@@ -12,30 +11,23 @@ let firstInitialState = {
         {id: 1, message: 'Hello, Universe!'},
         {id: 2, message: 'How old are you?'},
         {id: 3, message: 'I love React!'}
-    ],
-    newMessageText: 'IT-KAMASUTRA'
+    ]
 };
 
 const dialogsPageReduser = (state = firstInitialState, action) => {
-
 
     switch (action.type) {
 
         case SEND_MESSAGE_STATE:
             let newMessage = {
                 id: 4,
-                message: state.newMessageText
+                // message: state.newMessageText
+                message: action.message
             };
             return {
                 ...state,
                 messagesArray: [...state.messagesArray, newMessage],
                 newMessageText: ''
-            };
-
-        case NEW_MESSAGE_STATE:
-            return {
-                ...state,
-                newMessageText: action.messageText
             };
 
         default:
@@ -45,9 +37,7 @@ const dialogsPageReduser = (state = firstInitialState, action) => {
 
 export default dialogsPageReduser;
 
-export const addMessageStateActionCreator = () => ({type: SEND_MESSAGE_STATE});
-
-export const newMessageStateActionCreator = (text) => ({type: NEW_MESSAGE_STATE, messageText: text});
+export const addMessageStateActionCreator = (message) => ({type: SEND_MESSAGE_STATE, message: message});
 
 
 // if (action.type === SEND_MESSAGE_STATE) {

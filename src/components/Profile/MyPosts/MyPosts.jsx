@@ -1,39 +1,30 @@
 import React from 'react';
 import style_posts from './MyPosts.module.css';
 import Post from './Post/Post';
+import {ReduxPostFormContainer} from "./Forms/PostForm";
 
-const MyPosts = (props) => {
 
-    let postsElements = props.postsElements.map((el) => <Post key={el.id} message={el.message}
-                                                              like={el.like}/>);
+const MyPosts = React.memo(
+    (props) => {
 
-    let addPostState = () => {
-        props.addPostStateContainer();
-    };
+        console.log('YOYOYO');
 
-    let newPostState = (ev) => {
-        let text = ev.target.value;
-        props.newPostStateContainer(text);
-    };
+        let postsElements = props.postsArray.map((el) =>
+            <Post key={el.id} post={el.post} like={el.like}/>);
 
-    return (
-        <div className={style_posts.content}>
+        let addPostInRedux = (formData) => {
+            props.addPostState(formData.newPost);
+        };
 
-            <div className={style_posts.createPost}>
-                <p>My posts</p>
-                <div>
-                    <textarea onChange={newPostState} value={props.textareaValue}/>
-                </div>
-                <div>
-                    <button onClick={addPostState}>Add post</button>
+        return (
+            <div className={style_posts.content}>
+                <ReduxPostFormContainer onSubmit={addPostInRedux}/>
+                <div className={style_posts.allPosts}>
+                    {postsElements}
                 </div>
             </div>
-
-            <div className={style_posts.allPosts}>
-                {postsElements}
-            </div>
-        </div>
-    );
-};
+        );
+    }
+);
 
 export default MyPosts;

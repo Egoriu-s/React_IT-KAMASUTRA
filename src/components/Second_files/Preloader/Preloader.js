@@ -1,5 +1,5 @@
 import React from 'react';
-import style_users_preloader from "../users/Users_isFetching.module.css";
+import style_users_preloader from "./Users_isFetching.module.css";
 
 let Preloader = (props) => {
     return <div className={style_users_preloader.preloader}>

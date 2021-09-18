@@ -6,10 +6,8 @@ const Nav = () => {
     return (
         <nav className={style_nav.content}>
 
-            {/*<div className={`${style_nav.item} ${style_nav.active}`}> */}
-
             <div className={style_nav.item}>
-                <NavLink to='/profile' activeClassName={style_nav.active}>Profile</NavLink>
+                <NavLink to='/profile/' activeClassName={style_nav.active}>Profile</NavLink>
             </div>
             <div className={style_nav.item}>
                 <NavLink to='/dialogs' activeClassName={style_nav.active}>Messages</NavLink>

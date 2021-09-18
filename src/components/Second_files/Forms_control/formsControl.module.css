@@ -1,0 +1,18 @@
+.form_content {
+
+}
+
+.error textarea,
+.error input {
+    border: 2px solid red;
+}
+
+.error span {
+    color: red;
+}
+
+.error_summary_form {
+    border: red 1px solid;
+    margin: 10px;
+    color: orangered;
+}

@@ -2,17 +2,20 @@ import React from 'react';
 import style_profile from './Profile.module.css';
 import MyPostsContainer from "./MyPosts/MyPosts_Container";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../Second_files/Preloader/Preloader";
 
 const Profile = (props) => {
 
-    if (!props.profilePage.usersProfile) {
+    if (!props.profilePageProfile) {
+        console.log('PROFILE____');
         return <Preloader/>
     }
-
+    console.log('PROFILE');
     return (
         <div className={style_profile.content}>
-            <ProfileInfo usersProfile={props.profilePage.usersProfile}/>
+            <ProfileInfo profilePageProfile={props.profilePageProfile}
+                         profilePageStatus={props.profilePageStatus}
+                         updateStatusThunk={props.updateStatusThunk}/>
             <MyPostsContainer/>
         </div>
 

@@ -12,33 +12,33 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.content .page_number button {
-    width: 50px;
-    height: 20px;
-    padding: 2px;
-    margin-bottom: 10px;
-    border-radius: 50px;
-    border: 1px solid goldenrod;
-    text-align: center;
-    background-color: goldenrod;
-    color: white;
-}
+/*.content .page_number button {*/
+/*    width: 50px;*/
+/*    height: 20px;*/
+/*    padding: 2px;*/
+/*    margin-bottom: 10px;*/
+/*    border-radius: 50px;*/
+/*    border: 1px solid goldenrod;*/
+/*    text-align: center;*/
+/*    background-color: goldenrod;*/
+/*    color: white;*/
+/*}*/
 
-.content .page_number button:hover {
-    background-color: white;
-    color: goldenrod;
-}
+/*.content .page_number button:hover {*/
+/*    background-color: white;*/
+/*    color: goldenrod;*/
+/*}*/
 
-.content .page_number button:active {
-    background-color: white;
-    color: goldenrod;
-}
+/*.content .page_number button:active {*/
+/*    background-color: white;*/
+/*    color: goldenrod;*/
+/*}*/
 
-.content .page_number .selected_page {
-    background-color: white;
-    color: goldenrod;
-    font-weight: bold;
-}
+/*.content .page_number .selected_page {*/
+/*    background-color: white;*/
+/*    color: goldenrod;*/
+/*    font-weight: bold;*/
+/*}*/
 
 .content .user_foto_and_follow {
     display: grid;

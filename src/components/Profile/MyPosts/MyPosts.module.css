@@ -4,16 +4,15 @@
     border: 1px solid black;
 }
 
-.createPost{
+.createPost {
     padding-left: 25px;
 }
 
-.createPost p{
+.createPost p {
     font-size: 25px;
     color: black;
 }
 
 .allPosts {
     background-color: white;
-margin-bottom: 50px;
 }
