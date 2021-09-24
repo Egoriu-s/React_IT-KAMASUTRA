@@ -2,11 +2,11 @@ import style_dialogs from "../Dialogs.module.css";
 import {reduxForm} from "redux-form";
 import {maxLengthThunkCreator, required} from "../../Second_files/Validators/validators";
 import React from "react";
-import {createField, ElementFormHOC} from "../../Second_files/Forms_control/formsControl";
+import {createField, elementFormHOC} from "../../Second_files/Forms_control/formsControl";
 
 const maxLength10 = maxLengthThunkCreator(10);
 
-const Textarea = ElementFormHOC('textarea');
+const Textarea = elementFormHOC('textarea');
 
 const MessageForm = (props) => {
     return (

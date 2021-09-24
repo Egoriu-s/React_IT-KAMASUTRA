@@ -1,9 +1,9 @@
 import React from 'react';
-import style_users_preloader from "./Users_isFetching.module.css";
+import style_preloader from "./Preloader.module.css";
 
-let Preloader = (props) => {
-    return <div className={style_users_preloader.preloader}>
-        <div className={style_users_preloader.spinner}></div>
+const Preloader = (props) => {
+    return <div className={style_preloader.preloader}>
+        <div className={style_preloader.spinner}></div>
     </div>
 };
 

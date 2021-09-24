@@ -1,8 +1,8 @@
 import React from 'react';
 import style_users from "./Users.module.css";
-import Preloader from "../Second_files/Preloader/Preloader";
 import Paginator from "../Second_files/Paginator/Paginator";
 import User from "./User";
+import Preloader from "../Second_files/Preloader/Preloader";
 
 const UsersFunctional = (props) => {
 

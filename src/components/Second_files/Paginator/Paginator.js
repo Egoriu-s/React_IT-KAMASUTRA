@@ -25,9 +25,7 @@ const Paginator = (props) => {
             <div>
                 <button onClick={() => {
                     props.buttonPrevChanged(leftOFF - 1);
-                    debugger
                     setPortionNumber(portionNumber - 1);
-                    debugger
                 }}>{"<"} </button>
             </div>
             }

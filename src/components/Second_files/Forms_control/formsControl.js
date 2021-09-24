@@ -28,7 +28,7 @@ import {Field} from "redux-form";
 //     )
 // };
 
-export const ElementFormHOC = (Component) => ({input, meta, ...props}) => {
+export const elementFormHOC = (Component) => ({input, meta, ...props}) => {
     const ofMeta = meta.touched && meta.error;
     return (
         <div className={style_form.form_content + " " + (ofMeta && style_form.error)}>
@@ -48,4 +48,4 @@ export const createField = (placeholder, name, component, validator, props, text
                    validate={validator} {...props}/> {text}
         </div>
     )
-}
+};

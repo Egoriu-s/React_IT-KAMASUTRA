@@ -3,12 +3,12 @@ import style_form from '../../Second_files/Forms_control/formsControl.module.css
 import {reduxForm} from "redux-form";
 import React from "react";
 import {minLengthThunkCreator, required} from "../../Second_files/Validators/validators";
-import {createField, ElementFormHOC} from "../../Second_files/Forms_control/formsControl";
+import {createField, elementFormHOC} from "../../Second_files/Forms_control/formsControl";
 
 const minLengthPassword = minLengthThunkCreator(6);
 // const maxLengthPassword = maxLengthThunkCreator(12);
 
-const Input = ElementFormHOC('input');
+const Input = elementFormHOC('input');
 
 const LoginForm = ({handleSubmit, error}) => {
 

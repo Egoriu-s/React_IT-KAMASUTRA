@@ -16,6 +16,7 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app_reducer";
 import Preloader from "./components/Second_files/Preloader/Preloader";
 import store from "./redux/store_redux";
+import {withSuspense} from "./hoc/withSuspense";
 
 const ProfileContainer = React.lazy(() => import("./components/Profile/Profile_Container"));
 
@@ -49,8 +50,9 @@ class AppClass extends React.Component {
                     <React.Suspense fallback={<div>Загрузка...</div>}>
                         <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                         <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-                        <Route path='/users' render={() => <UsersContainer/>}/>
                     </React.Suspense>
+                    <Route path='/users' render={withSuspense(UsersContainer)}/>
+
 
                     <Route path='/friends' render={() => <FriendsContainer/>}/>
 

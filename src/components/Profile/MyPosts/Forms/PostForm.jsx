@@ -1,8 +1,7 @@
 import style_posts from "../MyPosts.module.css";
-import {Field, reduxForm} from "redux-form";
-import {createField, ElementFormHOC} from "../../../Second_files/Forms_control/formsControl";
+import {reduxForm} from "redux-form";
+import {createField, elementFormHOC} from "../../../Second_files/Forms_control/formsControl";
 import React from "react";
-import {required} from "../../../Second_files/Validators/validators";
 
 const validate = (value) => {
     const errors = {};
@@ -14,7 +13,7 @@ const validate = (value) => {
     return errors;
 };
 
-const Textarea = ElementFormHOC('textarea');
+const Textarea = elementFormHOC('textarea');
 
 const PostForm = (props) => {
 
